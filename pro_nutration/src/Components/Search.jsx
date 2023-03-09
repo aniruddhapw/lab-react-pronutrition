@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Search = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
-
-  const handleChange = (event) => {
-    setQuery(event.target.value);
-    onSearch(event.target.value);
-  };
-
+const SearchBar = ({ searchTerm, onSearch }) => {
   return (
-    <div>
-      <input
-        className="input mb-3"
-        type="text"
-        placeholder="Search for a food"
-        value={query}
-        onChange={handleChange}
-      />
+    <div className="field">
+      <div className="control">
+        <input
+          className="input"
+          type="text"
+          placeholder="Search for a food"
+          value={searchTerm}
+          onChange={onSearch}
+        />
+      </div>
     </div>
   );
 };
 
-export default Search;
+export default SearchBar;
